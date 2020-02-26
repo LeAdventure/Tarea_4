@@ -2,40 +2,41 @@
 <ion-card color = "light" >
   <ion-icon name = "person" ></ion-icon>
   <ion-label stacked>Nombre:</ion-label>
-  <ion-input placeholder = "Nombre" ></ion-input>
+  <ion-input placeholder = "Nombre" [(ngModel)]="nom"></ion-input>
   <ion-icon name = "person"></ion-icon>
   <ion-label stacked>Apellido:</ion-label>
-  <ion-input placeholder = "Apellido"></ion-input>
+  <ion-input placeholder = "Apellido" [(ngModel)]="ape"></ion-input>
   <ion-icon name = "mail"></ion-icon>
   <ion-label stacked>Correo:</ion-label>
-  <ion-input placeholder = "example@outlook.com"></ion-input>
+  <ion-input placeholder = "example@outlook.com" [(ngModel)]="mail"></ion-input>
   <ion-icon name = "calendar"></ion-icon>
   <ion-label stacked>Fecha de Nacimiento</ion-label>
-  <ion-datetime displayFormat="MMM DD YYYY" placeholder="--Select Date--"></ion-datetime>
+  <ion-datetime displayFormat="MMM DD YYYY" placeholder="--Select Date--" [(ngModel)]="calendar"></ion-datetime>
   <ion-icon></ion-icon>
   <ion-label stacked>Gender:</ion-label>
-  <ion-select placeholder = "--Select Gender--">
+  <ion-select placeholder = "--Select Gender--" [(ngModel)]="gender">
     <ion-select-option value="m">Male</ion-select-option>
     <ion-select-option value="f">Female</ion-select-option>
     <ion-select-option value="o">Other</ion-select-option>
   </ion-select>
   <ion-icon name = "eye"></ion-icon>
   <ion-label stacked>Contraseña:</ion-label>
-  <ion-input placeholder = "Contraseña"></ion-input>
+  <ion-input placeholder = "Contraseña" [(ngModel)]="contra"></ion-input>
   <ion-icon name = "eye"></ion-icon>
   <ion-label stacked>Confirmar Contraseña:</ion-label>
-  <ion-input placeholder = "Confirnmar Contraseña"></ion-input>
+  <ion-input placeholder = "Confirnmar Contraseña" [(ngModel)]="conf"></ion-input>
 </ion-card>
 
 <div>
-  <ion-card color = "light">
-    <ion-label color = "danger" stacked>Nombre Requerido</ion-label>
-    <ion-label color = "danger" stacked><br>Apellido Requerido</ion-label>
-    <ion-label color = "danger" stacked><br>Correo Requerido</ion-label>
-    <ion-label color = "danger" stacked><br>Fecha de Nacimiento Requerido</ion-label>
-    <ion-label color = "danger" stacked><br>Genero Requerido</ion-label>
-    <ion-label color = "danger" stacked><br>Password Requerido</ion-label>
-    <ion-label color = "danger" stacked><br>Confirmar Password Requerido</ion-label>
+  <ion-card color = "light" >
+    <ion-label color = "danger" stacked *ngIf="nom==undefined || nom==' '">Nombre Requerido</ion-label>
+    <ion-label color = "danger" stacked *ngIf="ape==undefined || ape==' '"><br>Apellido Requerido</ion-label>
+    <ion-label color = "danger" stacked *ngIf="mail==undefined || mail==' '"><br>Correo Requerido</ion-label>
+    <ion-label color = "danger" stacked *ngIf="calendar==undefined"><br>Fecha de Nacimiento Requerido</ion-label>
+    <ion-label color = "danger" stacked *ngIf="gender==undefined"><br>Genero Requerido</ion-label>
+    <ion-label color = "danger" stacked *ngIf="contra==undefined || contra==' '"><br>Password Requerido</ion-label>
+    <ion-label color = "danger" stacked *ngIf="(conf==undefined || conf==' ') || conf!=contra" ><br>Confirmar Password Requerido</ion-label>
+    <ion-button *ngIf="isValid()" onclick="alert('Todo en orden')">Submit</ion-button>
   </ion-card>
-  <ion-button >Submit</ion-button>
+  
 </div>
