@@ -1,0 +1,41 @@
+
+<ion-card color = "light" >
+  <ion-icon name = "person" ></ion-icon>
+  <ion-label stacked>Nombre:</ion-label>
+  <ion-input placeholder = "Nombre" ></ion-input>
+  <ion-icon name = "person"></ion-icon>
+  <ion-label stacked>Apellido:</ion-label>
+  <ion-input placeholder = "Apellido"></ion-input>
+  <ion-icon name = "mail"></ion-icon>
+  <ion-label stacked>Correo:</ion-label>
+  <ion-input placeholder = "example@outlook.com"></ion-input>
+  <ion-icon name = "calendar"></ion-icon>
+  <ion-label stacked>Fecha de Nacimiento</ion-label>
+  <ion-datetime displayFormat="MMM DD YYYY" placeholder="--Select Date--"></ion-datetime>
+  <ion-icon></ion-icon>
+  <ion-label stacked>Gender:</ion-label>
+  <ion-select placeholder = "--Select Gender--">
+    <ion-select-option value="m">Male</ion-select-option>
+    <ion-select-option value="f">Female</ion-select-option>
+    <ion-select-option value="o">Other</ion-select-option>
+  </ion-select>
+  <ion-icon name = "eye"></ion-icon>
+  <ion-label stacked>Contraseña:</ion-label>
+  <ion-input placeholder = "Contraseña"></ion-input>
+  <ion-icon name = "eye"></ion-icon>
+  <ion-label stacked>Confirmar Contraseña:</ion-label>
+  <ion-input placeholder = "Confirnmar Contraseña"></ion-input>
+</ion-card>
+
+<div>
+  <ion-card color = "light">
+    <ion-label color = "danger" stacked>Nombre Requerido</ion-label>
+    <ion-label color = "danger" stacked><br>Apellido Requerido</ion-label>
+    <ion-label color = "danger" stacked><br>Correo Requerido</ion-label>
+    <ion-label color = "danger" stacked><br>Fecha de Nacimiento Requerido</ion-label>
+    <ion-label color = "danger" stacked><br>Genero Requerido</ion-label>
+    <ion-label color = "danger" stacked><br>Password Requerido</ion-label>
+    <ion-label color = "danger" stacked><br>Confirmar Password Requerido</ion-label>
+  </ion-card>
+  <ion-button >Submit</ion-button>
+</div>
