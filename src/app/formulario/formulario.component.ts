@@ -28,6 +28,14 @@ export class FormularioComponent implements OnInit {
       return true;
     }
   }
-  
+
+  ishidden(): boolean{
+    if((this.nom==undefined || this.nom==' ') || (this.ape==undefined || this.ape==' ') || (this.mail==undefined || this.mail==' ') || (this.mail==undefined) || (this.gender==undefined) || (this.contra==undefined || this.contra==' ') || ((this.conf==undefined || this.conf==' ') || this.conf!=this.contra)){
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 }
+

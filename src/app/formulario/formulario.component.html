@@ -28,7 +28,7 @@
 </ion-card>
 
 <div>
-  <ion-card color = "light" >
+  <ion-card *ngIf="ishidden()" color = "light">
     <ion-label color = "danger" stacked *ngIf="nom==undefined || nom==' '">Nombre Requerido</ion-label>
     <ion-label color = "danger" stacked *ngIf="ape==undefined || ape==' '"><br>Apellido Requerido</ion-label>
     <ion-label color = "danger" stacked *ngIf="mail==undefined || mail==' '"><br>Correo Requerido</ion-label>
@@ -38,5 +38,7 @@
     <ion-label color = "danger" stacked *ngIf="(conf==undefined || conf==' ') || conf!=contra" ><br>Confirmar Password Requerido</ion-label>
     <ion-button *ngIf="isValid()" onclick="alert('Todo en orden')">Submit</ion-button>
   </ion-card>
-  
+  <ion-card *ngIf="isValid()" >
+    <ion-button onclick="alert('Todo en orden')" color = "danger">Submit</ion-button>
+  </ion-card>
 </div>
